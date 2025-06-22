@@ -36,6 +36,11 @@
   --section-gap: 160px;
 }
 
+@font-face {
+  font-family: Nokora;
+  src: url(./fonts/Nokora/Nokora.ttf);
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --color-background: var(--vt-c-black);
@@ -67,6 +72,7 @@ body {
     background-color 0.5s;
   line-height: 1.6;
   font-family:
+    system-ui,
     Inter,
     -apple-system,
     BlinkMacSystemFont,
@@ -78,9 +84,23 @@ body {
     'Fira Sans',
     'Droid Sans',
     'Helvetica Neue',
-    sans-serif;
+    'Noto Sans',
+    'Liberation Sans',
+    Arial,
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol',
+    'Noto Color Emoji',
+    Nokora;
   font-size: 15px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.flex-center {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
