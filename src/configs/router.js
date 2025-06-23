@@ -11,22 +11,36 @@ const router = createRouter({
     // 1. Routes with prefix
     {
       path: '/:locale',
-      children: routes
+      children: routes,
     },
 
     // 2. Routes without prefix (default locale)
-    ...routes.map(r => ({
+    {
+      path: '/',
+      redirect: `/${defaultLocale}`,
+    },
+    ...routes.map((r) => ({
       ...r,
       path: `/${r.path}`,
-      name: `default-${r.name}`
+      name: `default-${r.name}`,
     })),
 
     // 3. Redirect unknown paths to default locale
     {
       path: '/:pathMatch(.*)*',
-      redirect: `/${defaultLocale}`
+      redirect: `/${defaultLocale}`,
+    },
+  ],
+  // 👇 This ensures the page scrolls to top on each route change
+  scrollBehavior(to, from, savedPosition) {
+    // If there's a saved position (browser back/forward), use it
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      // Scroll to top
+      return { top: 0 }
     }
-  ]
+  },
 })
 
 router.beforeEach((to, from, next) => {

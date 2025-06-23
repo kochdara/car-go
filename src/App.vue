@@ -16,7 +16,13 @@ watch(() => route.path, (val) => {
 <template>
   <UApp>
     <router-view name="header" />
-    <router-view />
+
+    <router-view v-slot="{ Component }">
+      <keep-alive :include="['HomePage', 'ListingPage', 'DetailsPage', 'ProfilePage']">
+        <component :is="Component" />
+      </keep-alive>
+    </router-view>
+
     <router-view name="footer" />
   </UApp>
 </template>
