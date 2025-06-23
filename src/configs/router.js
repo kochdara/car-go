@@ -15,6 +15,10 @@ const router = createRouter({
     },
 
     // 2. Routes without prefix (default locale)
+    {
+      path: '/',
+      redirect: `/${defaultLocale}`
+    },
     ...routes.map(r => ({
       ...r,
       path: `/${r.path}`,
