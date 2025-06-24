@@ -47,8 +47,9 @@ const rating = ref([
 
       <ul>
         <li v-for="n in 5" :key="n">
-          <UButton color="neutral" variant="ghost" size="md" class="w-full bg-transparent rounded-none text-base text-muted"
-          :ui="{ base: 'p-0 sm:p-0 py-2 flex item-center justify-between' }">
+          <UButton color="neutral" variant="ghost" size="md"
+            class="w-full bg-transparent rounded-none text-base text-muted"
+            :ui="{ base: 'p-0 sm:p-0 py-1.5 sm:py-1.5 flex item-center justify-between' }">
             <p class="text-base">Recent Search 1</p>
             <UButton icon="i-lucide-x" size="md" color="neutral" variant="ghost" class="text-muted" />
           </UButton>
@@ -114,13 +115,15 @@ const rating = ref([
       <ul class="flex items-center justify-start gap-3 overflow-x-auto px-4 pb-1">
         <li>
           <UButton color="neutral" variant="ghost" size="md" icon="i-lucide-star"
-            class="bg-transparent border-2 rounded-full whitespace-nowrap" :ui="{ base: 'flex-center', leadingIcon: 'size-4' }">
+            class="bg-transparent border-2 rounded-full whitespace-nowrap"
+            :ui="{ base: 'flex-center', leadingIcon: 'size-4' }">
             All
           </UButton>
         </li>
         <li v-for="(item, index) in rating" :key="index">
           <UButton color="neutral" variant="ghost" size="md" icon="i-lucide-star"
-            class="bg-transparent border-2 rounded-full whitespace-nowrap" :ui="{ base: 'flex-center', leadingIcon: 'size-4' }">
+            class="bg-transparent border-2 rounded-full whitespace-nowrap"
+            :ui="{ base: 'flex-center', leadingIcon: 'size-4' }">
             {{ item || 'unkown' }}
           </UButton>
         </li>

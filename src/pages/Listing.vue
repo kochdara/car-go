@@ -17,12 +17,14 @@ const models = ref([
   { name: 'Chevrolet', icon: '/src/assets/icons/mercedes.svg' },
   { name: 'Toyota', icon: '/src/assets/icons/mercedes.svg' }
 ]);
+
+defineOptions({ name: 'ListingPage' });
 </script>
 
 <template>
   <header class="fixed top-0 w-full p-4 bg-white z-[1001] shadow-md">
     <UInput size="xl" placeholder="Search" icon="i-lucide-search" trailing-icon="i-lucide-settings-2" class="w-full"
-    :ui="{ base: 'py-3.5', leadingIcon: 'size-4.5' }" />
+      :ui="{ base: 'py-3.5', leadingIcon: 'size-4.5' }" />
   </header>
 
   <main class="mt-23 mb-18">

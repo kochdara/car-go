@@ -17,6 +17,7 @@ const route = useRoute()
 const homeLink = computed(() => localizedRoute(route, 'home'))
 const searchLink = computed(() => localizedRoute(route, 'search'))
 const listingLink = computed(() => localizedRoute(route, 'listing'))
+const profileLink = computed(() => localizedRoute(route, 'profile'))
 </script>
 
 <template>
@@ -78,7 +79,7 @@ const listingLink = computed(() => localizedRoute(route, 'listing'))
     </UButton>
 
     <!-- Profile -->
-    <UButton size="lg" class="w-full flex-center flex-col gap-1" color="primary" variant="primary">
+    <UButton size="lg" class="w-full flex-center flex-col gap-1" color="primary" variant="primary" :to="profileLink">
       <UIcon name="i-lucide-user" :class="{
         'text-secondary': prop.page === 'profile',
         'text-white': prop.page !== 'profile',
