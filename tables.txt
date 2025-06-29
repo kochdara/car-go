@@ -1,0 +1,8 @@
+
+// 250626
+car go
+- table users: uid, name, username, password, phones, image, cover, typeUser, country, is_delete,
+- table product: proid, title, price, catid, taxtype proyear, procolor, proconditions, thumb, images, descriptions, uid, status, is_delete 
+- table category: catid, typeid(brand, model), name, logo, is_delete
+- table counter: conid, uid, proid, type(rate, like, comment), counts, is_delete
+- table comments: comid, uid, proid, descriptions, is_delete
